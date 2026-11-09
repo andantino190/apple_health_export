@@ -36,6 +36,16 @@ def rows_to_dataframe(rows: list[dict[str, Any]]) -> pd.DataFrame:
     return df
 
 
+def _excel_safe(df: pd.DataFrame) -> pd.DataFrame:
+    """Excel/openpyxl rejects tz-aware datetimes; keep local wall time."""
+    out = df.copy()
+    for col in out.columns:
+        series = out[col]
+        if isinstance(series.dtype, pd.DatetimeTZDtype):
+            out[col] = series.dt.tz_localize(None)
+    return out
+
+
 def write_outputs(
     rows: list[dict[str, Any]],
     output_dir: Path,
@@ -51,7 +61,7 @@ def write_outputs(
         written.append(path)
     if "excel" in outputs:
         path = output_dir / outputs["excel"]
-        df.to_excel(path, index=False)
+        _excel_safe(df).to_excel(path, index=False)
         written.append(path)
     if "parquet" in outputs:
         path = output_dir / outputs["parquet"]

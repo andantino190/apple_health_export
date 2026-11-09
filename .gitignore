@@ -9,14 +9,16 @@ wheels/
 # Virtual environments
 .venv
 
-# IDE
+# IDE / OS
 .idea/
+.DS_Store
 
 # Data / local notes
 output/
 *.xml
 !tests/fixtures/**/*.xml
 memo.md
+config.yaml
 
 # Caches
 .pytest_cache/

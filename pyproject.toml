@@ -3,6 +3,7 @@ name = "apple-health-export"
 version = "0.1.0"
 description = "Extract and convert subsets of Apple Health export.xml into analysis-friendly formats"
 readme = "README.md"
+license = "MIT"
 authors = [
     { name = "Nobuhiro Shito", email = "andantino190@gmail.com" }
 ]

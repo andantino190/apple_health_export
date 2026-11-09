@@ -109,3 +109,7 @@ uv run pytest
 
 - 詳細仕様と実装計画: [SPEC.md](SPEC.md)
 - エージェント引き継ぎ: [HANDOFF.md](HANDOFF.md)
+
+## ライセンス
+
+[MIT](LICENSE)
