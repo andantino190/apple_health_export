@@ -1,0 +1,22 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# IDE
+.idea/
+
+# Data / local notes
+output/
+*.xml
+!tests/fixtures/**/*.xml
+memo.md
+
+# Caches
+.pytest_cache/
